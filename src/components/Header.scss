@@ -1,0 +1,50 @@
+.header {
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  color: #fff;
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-family: "Henny Penny", cursive !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header {
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    color: #fff;
+    font-family: "Cabin", sans-serif;
+    margin-bottom: 0px;
+  }
+  .logo {
+    font-family: "Henny Penny", cursive !important;
+    font-size: 12px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

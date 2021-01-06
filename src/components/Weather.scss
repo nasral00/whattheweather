@@ -1,0 +1,192 @@
+.weather {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container {
+  // background: #f4d35e;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.img {
+  order: 1;
+}
+.container .img img {
+  margin: 0 auto;
+  padding: 20px;
+  animation: imageFloat infinite linear 3s;
+  width: 20vw;
+  height: 20vw;
+}
+.inner__container {
+  order: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.metadata {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.metadata h1 {
+  margin: 0;
+}
+.metadata p {
+  margin: 0;
+}
+.weather__info {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  margin: 10px;
+  background: #fff;
+  width: 100%;
+}
+p.weather__info {
+  font-size: 100px;
+  font-family: "Cabin", sans-serif;
+  color: #ffaa00;
+}
+.searchbox {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  align-self: flex-end;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.searchbox div input::placeholder {
+  color: rgba($color: #fff, $alpha: 0.6);
+}
+.searchbox input,
+.searchbox input:active {
+  border: 1px solid white;
+  outline-style: none;
+  padding: 10px;
+  text-align: center;
+  background: none;
+  color: white;
+  width: 100px;
+}
+.searchbox button {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  outline-style: none;
+  border-style: none;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  color: #ffaa00;
+  width: 100px;
+  animation: out ease 0.5s;
+}
+.searchbox button:hover {
+  animation: in ease 0.5s;
+  transform: scale(0.9, 0.9) translateY(-2px);
+}
+
+@keyframes imageFloat {
+  0% {
+    transform: scale(1, 1) translateY(10px);
+  }
+  25% {
+    transform: scale(1, 1) translateY(0px);
+  }
+  50% {
+    transform: scale(1, 1) translateY(-10px);
+  }
+  75% {
+    transform: scale(1, 1) translateY(0px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(10px);
+  }
+}
+
+@keyframes in {
+  from {
+    transform: scale(1, 1) translateY(0px);
+  }
+  to {
+    transform: scale(0.9, 0.9) translateY(-3px);
+  }
+}
+
+@keyframes out {
+  from {
+    transform: scale(0.9, 0.9) translateY(-2px);
+  }
+  to {
+    transform: scale(1, 1) translateY(0px);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    // background: #f4d35e;
+    padding: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 0 auto;
+  }
+  p.weather__info {
+    font-size: 60px;
+    font-family: "Cabin", sans-serif;
+    color: #ffaa00;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .container {
+    // background: #f4d35e;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
