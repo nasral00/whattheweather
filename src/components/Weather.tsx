@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import { WeatherContext } from "./WeatherContext";
 import "./Weather.scss";
 import sun from "../images/sunny.svg";
@@ -16,7 +15,6 @@ function Weather() {
     <div className="weather">
       <div className="container">
         <div className="img">
-          {/* <p>{weatherInfo.weatherInfo.forecast}</p> */}
           {weatherInfo.weatherInfo.forecast.includes("clouds") && (
             <img src={overcast} alt="overcast" />
           )}
@@ -94,6 +92,8 @@ function Weather() {
 
 export default Weather;
 
+// Convert Kelvin to fahrenheit
+// Can also add a function for celsius
 function convertToFahrenheit(deg: number) {
   let fahrenheit = (deg * 9) / 5 - 459.67;
   return fahrenheit;

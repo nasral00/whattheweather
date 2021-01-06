@@ -1,24 +1,17 @@
 import React, { useState, createContext, useEffect } from "react";
 
+//Using react context api to host state for all components
+
+// weather context that is specified in Provider below, have to provide default values for TS
 export const WeatherContext = createContext({
   weatherInfo: { city: "", temp: "", forecast: "" },
   setWeatherInfo: {},
   fetchWeather: (city: string, country: string, e: any) => {},
 });
 
-// const WeatherUpdateContext = createContext(
-//   (city: string, country: string) => {}
-// );
-
-// export function useWeatherContext() {
-//   return useContext(WeatherContext);
-// }
-// export function useWeatherUpdateContext() {
-//   return useContext(WeatherUpdateContext);
-// }
-
+// Weather Provider
 export function WeatherProvider(props: any) {
-  const API_KEY = "7a420dd1ec3fe96ed02a07ec09aad34e";
+  // const API_KEY = ""; add openweather map api key here
   const URL = `http://api.openweathermap.org/data/2.5/weather?q=`;
   const GEOLOCATION_URL = `http://api.openweathermap.org/data/2.5/weather?`;
   const [weatherInfo, setWeatherInfo] = useState({
@@ -26,14 +19,8 @@ export function WeatherProvider(props: any) {
     temp: "",
     forecast: "",
   });
-  // const [geoLocationWeather, setGeoLocationWeather] = useState({
-  //   geoLocationCity: "",
-  //   geoLocationTemp: "",
-  //   geoLocationForecast: "",
-  // });
-  // navigator.geolocation.getCurrentPosition((p) => {
-  //   console.log(p);
-  // });
+
+  //pulls location on first load
   useEffect(() => {
     if (navigator.geolocation) {
       let geoLocationPosition = navigator.geolocation.getCurrentPosition.bind(
@@ -65,6 +52,7 @@ export function WeatherProvider(props: any) {
     }
   }, []);
 
+  //fetches the weather for specified
   const fetchWeather = (city: string, country: string, event: any) => {
     event.preventDefault();
     fetch(`${URL}${city},${country}&appid=${API_KEY}`)
